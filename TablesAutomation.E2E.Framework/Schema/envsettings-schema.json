@@ -1,0 +1,21 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://json-schema.org/draft-07/schema#",
+  "title": "EnvConfiguration",
+  "description": "Environment configuration",
+  "type": "object",
+  "properties": {
+    "EnvConfiguration": {
+      "type": "object",
+      "properties": {
+        "BaseUrl": {
+          "type": "string"
+        }
+
+      },
+    "required": [
+      "BaseUrl"      
+    ]
+  }
+}
+}
