@@ -12,7 +12,9 @@ Tests are running against <a href = "https://material.angular.io/"> Angular Mate
 - Features - combinations on Test Scenarios (can also be considered as Test Suites)
 
 ## Features
-- Framework has parallel test runs (organized by test features). 
-- Headful/headless browser mode (Controlled by <a href = "https://github.com/Racoonas/Samples-TablesAutomation/blob/main/TablesAutomation.E2E.FeaturedTests/appsettings.json">appsettings </a> configuration file)
-- Screenshots capturing (Controlled by <a href = "https://github.com/Racoonas/Samples-TablesAutomation/blob/main/TablesAutomation.E2E.FeaturedTests/appsettings.json">appsettings </a> configuration file)
-- Traces and videos capturing (Controlled by <a href = "https://github.com/Racoonas/Samples-TablesAutomation/blob/main/TablesAutomation.E2E.FeaturedTests/appsettings.json">appsettings </a> configuration file)
+- Framework has parallelizable test runs (organized by test features).
+- Following features controlled by <a href = "https://github.com/Racoonas/Samples-TablesAutomation/blob/main/TablesAutomation.E2E.FeaturedTests/appsettings.json">appsettings </a> configuration file:
+  - Multiple Browsers support
+  - Headful/headless browser mode
+  - Screenshots capturing
+  - Traces and videos capturing
