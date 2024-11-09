@@ -1,4 +1,6 @@
 ﻿using Microsoft.Playwright;
+using System.Data;
+using TablesAutomation.E2EFramework.Pages;
 
 namespace TablesAutomation.E2EFramework.PageComponents
 {
@@ -12,7 +14,31 @@ namespace TablesAutomation.E2EFramework.PageComponents
             _page = page;
             _tableContainer = container;
         }
-        
+             
+        /// <summary>
+        /// Reads the table in the page, converts to DataTable and returns
+        /// </summary>
+        /// <returns></returns>
+        public async Task<DataTable> AsDataTable()
+        {
+            var dataTable = new DataTable();
+
+            var headers = await GetHeaders();
+            var rows = await GetAllRowValues();
+
+            foreach (var header in headers)
+            {
+                dataTable.Columns.Add(header);
+            }
+
+            foreach (var row in rows)
+            {
+                dataTable.Rows.Add(row.Select(val => val.ToString()).ToArray());
+            }
+
+            return dataTable;
+        }
+
         /// <summary>
         /// Find the header with the specified text and click it
         /// </summary>

@@ -42,29 +42,18 @@ namespace TablesAutomation.E2EFeaturedTests.Steps
         [Then(@"Basic table contains following rows:")]
         public async Task TableHasRows(Table expectedTable)
         {
+            if (expectedTable.RowCount == 0) throw new ArgumentException("At least one row should be specified");
+
             var tablesPage = new TablesPage(_page);
             await tablesPage.BasicTable.WaitForAsync();
 
-            //Creating actual data table from the values in the page:
-            var actualDataTable = new DataTable();
-
-            var headers = await tablesPage.GetBasicTable().GetHeaders();
-            var rows = await tablesPage.GetBasicTable().GetAllRowValues();
-
-            foreach (var header in headers)
-            {
-                actualDataTable.Columns.Add(header);
-            }
-
-            foreach (var row in rows)
-            {
-                actualDataTable.Rows.Add(row.Select(val => val.ToString()).ToArray());
-            }
+            //Getting actual data table from the page:
+            var actualDataTable = await tablesPage.GetBasicTable().AsDataTable();
 
             //Converting expected table into DataTable:
             var expectedDataTable = expectedTable.ToDataTable();
 
-            //Finally comparing 2 tables:
+            //Comparing 2 tables:
             actualDataTable.ShouldContainRows(expectedDataTable);
         }
 
