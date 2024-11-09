@@ -1,6 +1,5 @@
 ﻿using Microsoft.Playwright;
 using System.Data;
-using TablesAutomation.E2EFramework.Pages;
 
 namespace TablesAutomation.E2EFramework.PageComponents
 {
@@ -16,7 +15,7 @@ namespace TablesAutomation.E2EFramework.PageComponents
         }
              
         /// <summary>
-        /// Reads the table in the page, converts to DataTable and returns
+        /// Read the table from the page, convert to DataTable
         /// </summary>
         /// <returns></returns>
         public async Task<DataTable> AsDataTable()
