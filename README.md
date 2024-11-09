@@ -5,6 +5,11 @@ This repository contains free framework built with <a href="https://playwright.d
 ## Target
 Tests are running against <a href = "https://material.angular.io/"> Angular Material </a> site, showcasing some examples of interactions with tables.
 
+## Projects
+- <b>TablesAutomation.E2EFeaturedTests</b> - Tests themselves. SpecFlow featured test scenarios, step definitions and hooks.
+- <b>TablesAutomation.E2EFramework</b> - Spinning gears under the hood. Page objects, utilities, models, configuration management classes.
+- <b>TablesAutomation.E2EUnitTests</b> - Unit tests. Custom written Utils and Helpers should be covered as much as possible here.
+
 ## Logic Layers
 - Page Objects (lowest logic level) - contains particular page elements and the simplest operations.
 - Step Definitions (business logic abstraction layer) - contains page operations, which are more sophisticated than simple operations in the page.
